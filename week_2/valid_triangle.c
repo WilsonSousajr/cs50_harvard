@@ -1,62 +1,34 @@
+/* LIBS */
+
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
+
+/* END LIBS */
+
+/* MAIN */
 
 int main(void){
 
   float side_a, side_b, side_c;
+  bool isValid(float x, float y, float z);
 
-  int isValid(float side_a, float side_b, float side_c){
-    if((side_a + side_b) >= side_c)
-    {
-      return 0;
-    }
-    else if((side_b + side_c) >= side_a)
-    {
-      return 0;
-    }
-    else if((side_c + side_a) >= side_b)
-    {
-      return 0;
-    }
-    else{
-      return 1;
-    }
-  }
-
+  system("clear");
   printf("### TRIANGLE ###\n");
 
-  do
-  {
+  printf("Type side A length: \n");
+  scanf("%f", &side_a);
+  system("clear");
 
-    printf("Type side a: ");
-    scanf("%f", &side_a);
+  printf("Type side B length: \n");
+  scanf("%f", &side_b);
+  system("clear");
 
-    system("clear");
+  printf("Type side C length: \n");
+  scanf("%f", &side_c);
+  system("clear");
 
-  }while(side_a <= 0);
-
-  do
-  {
-
-    printf("Type side b: ");
-    scanf("%f", &side_b);
-
-    system("clear");
-
-  }while(side_b <= 0);
-
-  do
-  {
-
-    printf("Type side c: ");
-    scanf("%f", &side_c);
-
-    system("clear");
-
-  }while(side_c <= 0);
-  
-  
-  if("%d", isValid(side_a, side_b, side_c) != 0)
+  if(isValid(side_a, side_b, side_c) == false)
   {
     printf("### INVALID ###\n");
   }
@@ -66,4 +38,29 @@ int main(void){
   }
 
   return 0;
+
 }
+
+/* END MAIN */
+
+/* FUNCTIONS */
+
+bool isValid(float x, float y, float z)
+{
+  if( x <= 0 || y <= 0 || z <= 0)
+  {
+    return false;
+  }
+
+  else if( x + y < z || y + z < x || z + x < y)
+  {
+    return false;
+  }
+
+  else
+  {
+    return true;
+  }
+}
+
+/* END FUNCTIONS */
