@@ -1,4 +1,4 @@
-sort1 uses: Selection sort
+sort1 uses: Bubble sort
 
 How do you know?: It was the file that took the most time to sort
 
@@ -6,6 +6,6 @@ sort2 uses: Merge sort
 
 How do you know?: It was the file that took less time to sort
 
-sort3 uses: Bubble
+sort3 uses: Selection sort
 
 How do you know?: It was the file that spent intermediate time to sort 
